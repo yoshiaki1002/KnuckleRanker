@@ -11,13 +11,14 @@
 		5001C6A32503611C004BE96D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5001C6A12503611C004BE96D /* Interface.storyboard */; };
 		5001C6A52503611D004BE96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5001C6A42503611D004BE96D /* Assets.xcassets */; };
 		5001C6AC2503611D004BE96D /* KnuckleRanker WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5001C6AB2503611D004BE96D /* KnuckleRanker WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5001C6B12503611D004BE96D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C6B02503611D004BE96D /* ContentView.swift */; };
+		5001C6B12503611D004BE96D /* MeasuringKnuckleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C6B02503611D004BE96D /* MeasuringKnuckleView.swift */; };
 		5001C6B32503611D004BE96D /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C6B22503611D004BE96D /* HostingController.swift */; };
 		5001C6B52503611D004BE96D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C6B42503611D004BE96D /* ExtensionDelegate.swift */; };
 		5001C6B72503611D004BE96D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C6B62503611D004BE96D /* NotificationController.swift */; };
 		5001C6B92503611D004BE96D /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C6B82503611D004BE96D /* NotificationView.swift */; };
 		5001C6BB2503611E004BE96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5001C6BA2503611E004BE96D /* Assets.xcassets */; };
 		5001C6BE2503611E004BE96D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5001C6BD2503611E004BE96D /* Preview Assets.xcassets */; };
+		50E75797250E328A00160D5C /* MeasuringKnuckleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E75796250E328A00160D5C /* MeasuringKnuckleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,7 @@
 		5001C6A42503611D004BE96D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5001C6A62503611D004BE96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5001C6AB2503611D004BE96D /* KnuckleRanker WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "KnuckleRanker WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5001C6B02503611D004BE96D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5001C6B02503611D004BE96D /* MeasuringKnuckleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuringKnuckleView.swift; sourceTree = "<group>"; };
 		5001C6B22503611D004BE96D /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		5001C6B42503611D004BE96D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5001C6B62503611D004BE96D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		5001C6BD2503611E004BE96D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5001C6BF2503611E004BE96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5001C6C02503611E004BE96D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		50E75796250E328A00160D5C /* MeasuringKnuckleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuringKnuckleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +125,7 @@
 		5001C6AF2503611D004BE96D /* KnuckleRanker WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5001C6B02503611D004BE96D /* ContentView.swift */,
+				50E75793250E2D3800160D5C /* View */,
 				5001C6B22503611D004BE96D /* HostingController.swift */,
 				5001C6B42503611D004BE96D /* ExtensionDelegate.swift */,
 				5001C6B62503611D004BE96D /* NotificationController.swift */,
@@ -142,6 +144,23 @@
 				5001C6BD2503611E004BE96D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50E75793250E2D3800160D5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50E75795250E324B00160D5C /* MeasuringKnuckle */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50E75795250E324B00160D5C /* MeasuringKnuckle */ = {
+			isa = PBXGroup;
+			children = (
+				5001C6B02503611D004BE96D /* MeasuringKnuckleView.swift */,
+				50E75796250E328A00160D5C /* MeasuringKnuckleViewModel.swift */,
+			);
+			path = MeasuringKnuckle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,9 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5001C6B32503611D004BE96D /* HostingController.swift in Sources */,
-				5001C6B12503611D004BE96D /* ContentView.swift in Sources */,
+				5001C6B12503611D004BE96D /* MeasuringKnuckleView.swift in Sources */,
 				5001C6B72503611D004BE96D /* NotificationController.swift in Sources */,
 				5001C6B52503611D004BE96D /* ExtensionDelegate.swift in Sources */,
+				50E75797250E328A00160D5C /* MeasuringKnuckleViewModel.swift in Sources */,
 				5001C6B92503611D004BE96D /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
