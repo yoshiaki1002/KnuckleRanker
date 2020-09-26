@@ -16,17 +16,11 @@ class MeasuringKnuckleViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     
     private var motionManager: CMMotionManager?
-    
-    init() {
-        self.motionManager = CMMotionManager()
-    }
+    private var recorder: SensorDataRecorder?
     
     deinit {
         self.cancellable?.cancel()
-        if let manager = self.motionManager, manager.isAccelerometerActive {
-            manager.stopAccelerometerUpdates()
-            self.motionManager = nil
-        }
+        self.stopSensor()
     }
     
     func startTimer(to: Int) {
@@ -43,7 +37,7 @@ class MeasuringKnuckleViewModel: ObservableObject {
                     self.isTimerFinished = true
                     self.cancellable?.cancel()
                 }
-        }
+            }
     }
     
     func vibrate() {
@@ -52,6 +46,8 @@ class MeasuringKnuckleViewModel: ObservableObject {
     }
     
     func startSensor() {
+        self.recorder = SensorDataRecorder()
+        self.motionManager = CMMotionManager()
         guard let manager = self.motionManager else {
             return
         }
@@ -59,8 +55,16 @@ class MeasuringKnuckleViewModel: ObservableObject {
             print("startSensor: accelerometer is not available.")
             return
         }
-        manager.accelerometerUpdateInterval = 0.1
+        manager.accelerometerUpdateInterval = 1 / 30 // 30Hz
         manager.startAccelerometerUpdates(to: .main, withHandler: self.updateAccelerometer)
+    }
+    
+    func stopSensor() {
+        if let manager = self.motionManager, manager.isAccelerometerActive {
+            manager.stopAccelerometerUpdates()
+            self.motionManager = nil
+        }
+        self.recorder = nil
     }
     
     private func updateAccelerometer(data: CMAccelerometerData?, error: Error?) {
@@ -72,6 +76,11 @@ class MeasuringKnuckleViewModel: ObservableObject {
             print("updateAccelerometer: error (data is nil))")
             return
         }
-        print("[\(data.timestamp)] x: \(data.acceleration.x), y: \(data.acceleration.y), z: \(data.acceleration.z)")
+        if let recorder = self.recorder {
+            recorder.addData(
+                timestamp: data.timestamp,
+                data: [data.acceleration.x, data.acceleration.y, data.acceleration.z]
+            )
+        }
     }
 }

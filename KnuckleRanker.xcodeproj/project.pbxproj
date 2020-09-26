@@ -18,6 +18,7 @@
 		5001C6B92503611D004BE96D /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5001C6B82503611D004BE96D /* NotificationView.swift */; };
 		5001C6BB2503611E004BE96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5001C6BA2503611E004BE96D /* Assets.xcassets */; };
 		5001C6BE2503611E004BE96D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5001C6BD2503611E004BE96D /* Preview Assets.xcassets */; };
+		501D32F32518A52E005337A4 /* SensorDataRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501D32F22518A52E005337A4 /* SensorDataRecorder.swift */; };
 		50E75797250E328A00160D5C /* MeasuringKnuckleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E75796250E328A00160D5C /* MeasuringKnuckleViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		5001C6BD2503611E004BE96D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5001C6BF2503611E004BE96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5001C6C02503611E004BE96D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		501D32F22518A52E005337A4 /* SensorDataRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataRecorder.swift; sourceTree = "<group>"; };
 		50E75796250E328A00160D5C /* MeasuringKnuckleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuringKnuckleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				5001C6BF2503611E004BE96D /* Info.plist */,
 				5001C6C02503611E004BE96D /* PushNotificationPayload.apns */,
 				5001C6BC2503611E004BE96D /* Preview Content */,
+				501D32F22518A52E005337A4 /* SensorDataRecorder.swift */,
 			);
 			path = "KnuckleRanker WatchKit Extension";
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				5001C6B52503611D004BE96D /* ExtensionDelegate.swift in Sources */,
 				50E75797250E328A00160D5C /* MeasuringKnuckleViewModel.swift in Sources */,
 				5001C6B92503611D004BE96D /* NotificationView.swift in Sources */,
+				501D32F32518A52E005337A4 /* SensorDataRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
